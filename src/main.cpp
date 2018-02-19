@@ -20,15 +20,19 @@ using namespace std;
 
 int main()
 {
-
+  struct passwd *pwd;
+  pwd = getpwuid(geteuid());
+  char host [128];
+  gethostname(host, sizeof(host));
+cout << pwd->pw_name << "@" << host << " $ ";
     string input;
     getline(cin, input);
-    Processes mainProcexss;
+    Processes mainProcess;
     while(input != "exit")
     {
         mainProcess.parse(input);
         mainProcess.execute();
-        mainProcess.reset();x
+        mainProcess.reset();
         getline(cin, input);
     }
     return 0;
