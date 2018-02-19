@@ -46,3 +46,4 @@ int Or::execute()
     }
     return currStatus;
 }
+#endif

@@ -805,3 +805,4 @@ void Processes::reset()
     this->currCmds.resize(0);
 
 }
+#endif

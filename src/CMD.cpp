@@ -1038,3 +1038,4 @@ int Command::redirection(bool pipes, int numPipes)
     }
     return 0;
 }
+#endif

@@ -55,3 +55,4 @@ int And::execute()
     }
     return currStatus;
 }
+#endif

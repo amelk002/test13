@@ -1,4 +1,4 @@
-#ifndef __BASE_H__
+#ifndef __BASE_CPP__
 #define __BASE_CPP__
 
 #include <iostream>
@@ -25,3 +25,4 @@ Base::Base()
 Base::~Base()
 {
 }
+#endif
