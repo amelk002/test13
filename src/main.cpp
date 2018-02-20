@@ -20,11 +20,13 @@ using namespace std;
 
 int main()
 {
-  struct passwd *pwd;
-  pwd = getpwuid(geteuid());
-  char host [128];
-  gethostname(host, sizeof(host));
-cout << pwd->pw_name << "@" << host << " $ ";
+    char *userName = getlogin();
+        if(!userName) {
+            perror("getlogin() error");
+        }
+    char hostName[1000];
+    gethostname(hostName, sizeof hostName);
+    cout << userName << "@" << hostName << "$ ";
     string input;
     getline(cin, input);
     Processes mainProcess;
@@ -33,6 +35,7 @@ cout << pwd->pw_name << "@" << host << " $ ";
         mainProcess.parse(input);
         mainProcess.execute();
         mainProcess.reset();
+        cout << userName << "@" << hostName << "$ ";
         getline(cin, input);
     }
     return 0;
